@@ -1,0 +1,54 @@
+.names {
+    margin-top: 3rem;
+}
+
+.user__info {
+    border: 2px solid #ccc;
+    padding: 20px;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 350px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    margin: 0 auto;
+    gap: 1rem;
+    border-radius: 0.5em;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.4)
+}
+  
+.user__name {
+    color: #333;
+    font-weight: bold;
+}
+  
+.user__list {
+    list-style: none;
+    padding: 0;
+}
+  
+.user__info li span:first-child {
+    font-weight: bold;
+}
+
+.user__btn {
+    background-color: rgb(231, 79, 79);
+    color: white;
+    border: none;
+    padding: 0.4rem 0.6rem;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.user__btn2 {
+    background-color: rgb(83, 145, 184);
+    color: white;
+    border: none;
+    padding: 0.4rem 0.6rem;
+    cursor: pointer;
+}
+
+@media (min-width: 700px) {
+    .user__info {
+        max-width: 1024px;
+    }
+}
