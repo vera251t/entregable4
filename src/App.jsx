@@ -53,7 +53,7 @@ function App() {
         }
       </div>
       <footer className='footer'>
-        <a className='footer__link' href="https://rick-y-morty-academlo.netlify.app/" target='_blank'>Repositorio</a>
+        <a className='footer__link' href="https://github.com/vera251t/entregable4" target='_blank'>Repositorio</a>
       </footer>
     </div>
   )
