@@ -26,6 +26,55 @@
     filter: grayscale(0);
 }
 
+.user__info {
+    margin-top: 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap: 1.5rem;
+    font-size: 1rem;
+}
+
+.crud{
+    width: 100%;
+    max-width: 320px;
+    padding: 1rem;
+    border: 3px solid #ccc;
+    border-radius: 0.5em;
+    margin: 0 auto;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.4)
+}
+
+.crud__name {
+    color: #333;
+    font-weight: bold;
+}
+  
+.crud__list {
+    list-style: none;
+    padding: 0;
+}
+  
+.crud__list li span:first-child {
+    font-weight: bold;
+}
+
+.crud__btn {
+    background-color: rgb(231, 79, 79);
+    color: white;
+    border: none;
+    padding: 0.4rem 0.6rem;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.crud__btn2 {
+    background-color: rgb(83, 145, 184);
+    color: white;
+    border: none;
+    padding: 0.4rem 0.6rem;
+    cursor: pointer;
+}
+
 .footer {
     padding: 3rem;
     background-color: lightslategray;
@@ -41,15 +90,25 @@
     cursor: pointer;
 }
 
-
 @media (min-width: 700px) {
     .header {
-        height: 100px;
+        height: 95px;
         flex-direction: row;
         justify-content: space-around;
+        margin-bottom: 2.5rem;
     }
 
     .header__title {
         font-size: 2.3rem;
+    }
+
+    .user__info {
+        max-width: 1024px;
+        margin: 0 auto;   
+    }
+    
+    .footer {
+        margin-top: 16.1rem;
+        padding: 2rem;
     }
 }
