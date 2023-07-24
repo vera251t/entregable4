@@ -10,8 +10,9 @@ function App() {
 
   const [updateInfo, setUpdateInfo] = useState()
 
-  const baseUrl = 'https://users-crud.academlo.tech/'
-  
+  //'https://users-crud.academlo.tech/'
+
+  const baseUrl = 'https://user-academlo.onrender.com/api/v1'
   const [ users, getAllUser, createNewUser, deleteUserById, updateUserById ] = useFetch(baseUrl)
 
   useEffect(() => {
@@ -23,7 +24,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div className='app'>
       <div className='header'>
         <h1 className='header__title'>Users Crud</h1>
         <button className='header__btn' onClick={handleOpenForm}>
