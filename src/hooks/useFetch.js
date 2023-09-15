@@ -4,13 +4,18 @@ import { useState } from "react"
 const useFetch = (baseUrl) => {
 
     const [infoApi, setInfoApi] = useState()
+    const [isLoading, setIsLoading] = useState(true)
     
     //Read
     const getApi = (path) => {
+        setIsLoading(true)
         const url =`${baseUrl}${path}/`
         axios.get(url)
             .then(res => setInfoApi(res.data))
             .catch(err => console.log(err))
+            .finally(() => {
+                setIsLoading(false)
+            })
     }
 
     //Create
@@ -53,7 +58,7 @@ const useFetch = (baseUrl) => {
             .catch(err => console.log(err))
     }
 
-    return [ infoApi, getApi, createNewRegister,deleteRegister, updateRegister ]
+    return [ infoApi, getApi, createNewRegister,deleteRegister, updateRegister, isLoading ]
 }
 
 export default useFetch

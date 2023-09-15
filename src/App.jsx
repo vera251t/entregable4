@@ -3,6 +3,7 @@ import './App.css'
 import useFetch from './hooks/useFetch'
 import FormUsers from './components/FormUsers'
 import UserCard from './components/UserCard'
+import Loading from './components/Loading'
 
 function App() {
 
@@ -10,10 +11,8 @@ function App() {
 
   const [updateInfo, setUpdateInfo] = useState()
 
-  //'https://users-crud.academlo.tech/'
-
   const baseUrl = 'https://user-academlo.onrender.com/api/v1'
-  const [ users, getAllUser, createNewUser, deleteUserById, updateUserById ] = useFetch(baseUrl)
+  const [ users, getAllUser, createNewUser, deleteUserById, updateUserById, isLoading ] = useFetch(baseUrl)
 
   useEffect(() => {
     getAllUser('/users')
@@ -40,19 +39,23 @@ function App() {
           setIsCloseForm={setIsCloseForm}
         />
       </div>
-      <div className='user__info'>
-        {
-          users?.map(user => (
-            <UserCard 
-              key={user.id}
-              user={user}
-              deleteUserById={deleteUserById}
-              setUpdateInfo={setUpdateInfo}
-              setIsCloseForm={setIsCloseForm }
-            />
-          ))
-        }
-      </div>
+      {
+        isLoading
+          ? <Loading />
+          : <div className='user__info'>
+            {
+              users?.map(user => (
+                <UserCard 
+                  key={user.id}
+                  user={user}
+                  deleteUserById={deleteUserById}
+                  setUpdateInfo={setUpdateInfo}
+                  setIsCloseForm={setIsCloseForm }
+                />
+              ))
+            }
+            </div>
+      }
       <footer className='footer'>
         <a className='footer__link' href="https://github.com/vera251t/entregable4" target='_blank'>Repositorio</a>
       </footer>

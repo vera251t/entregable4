@@ -50,6 +50,22 @@
     cursor: pointer;
 }
 
+.loading {
+    margin: auto;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 5px solid #2B2A4C;
+    border-top-color: transparent;
+    animation: spin 1.2s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 @media (min-width: 700px) {
     .header {
         height: 95px;
