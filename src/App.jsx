@@ -11,7 +11,7 @@ function App() {
 
   const [updateInfo, setUpdateInfo] = useState()
 
-  const baseUrl = 'https://user-academlo.onrender.com/api/v1'
+  const baseUrl = 'https://users-crud-db.onrender.com/api/v1'
   const [ users, getAllUser, createNewUser, deleteUserById, updateUserById, isLoading ] = useFetch(baseUrl)
 
   useEffect(() => {
